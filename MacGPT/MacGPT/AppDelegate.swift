@@ -218,7 +218,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
 
     func appendToChatHistory(role: String, markdown: String) {
         let attributed = markdownToAttributedString(markdown)
-        print("Appending to chat history: \(role) - \(attributed.string)")
+        // print("Appending to chat history: \(role) - \(attributed.string)")
         let bubble = NSMutableAttributedString()
 
         let senderColor: NSColor = (role == "user") ? .systemBlue : .systemRed
@@ -250,7 +250,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
     }
 
     func fetchChatGPTResponse(prompt: String) {
-        let apiKey = "OPEN_AI_API_KEY" // Replace with your actual OpenAI API key
+        let apiKey = "" // Replace with your actual OpenAI API key
         guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else { return }
 
         var request = URLRequest(url: url)
@@ -274,7 +274,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
 
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         guard let chunk = String(data: data, encoding: .utf8) else { return }
-        print("Received chunk: \(chunk)")
+        // print("Received chunk: \(chunk)")
         let lines = chunk.components(separatedBy: "\n")
         for line in lines {
             guard line.hasPrefix("data: ") else { continue }
@@ -282,7 +282,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
             let jsonString = line.replacingOccurrences(of: "data: ", with: "")
             if jsonString == "[DONE]" {
                 dataTask.cancel()
-                // Finalize the response (optionally mark as complete)
+                // On DONE, just clear the buffer; do not append again to avoid duplicate messages
+                streamingResponse = ""
                 return
             }
 
@@ -292,8 +293,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
                let delta = choices.first?["delta"] as? [String: Any],
                let content = delta["content"] as? String {
                 streamingResponse += content
-                // Append the latest streaming content to chat history as it arrives
-                // Remove the last assistant message if present, then append the updated one
+                // Live update: remove last assistant message and append the current streaming response
                 removeLastAssistantMessageIfNeeded()
                 appendToChatHistory(role: "assistant", markdown: streamingResponse)
             }
@@ -304,13 +304,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
     // Helper to remove the last assistant message (if any) to avoid duplicate streaming
     func removeLastAssistantMessageIfNeeded() {
         guard let storage = chatHistory.textStorage else { return }
-        // Find the last "Assistant: " header
         let fullString = storage.string as NSString
-        let searchString = "Assistant: "
-        let range = fullString.range(of: searchString, options: .backwards)
-        if range.location != NSNotFound {
-            // Remove from the header to the end
-            storage.deleteCharacters(in: NSRange(location: range.location, length: fullString.length - range.location))
+        let userHeader = "You: "
+        let assistantHeader = "Assistant: "
+        // Find the last 'Assistant: ' header that comes after the last 'You: '
+        let lastUserRange = fullString.range(of: userHeader, options: .backwards)
+        let lastAssistantRange = fullString.range(of: assistantHeader, options: .backwards)
+        if lastAssistantRange.location != NSNotFound {
+            // Only remove if the last assistant message is after the last user message
+            if lastUserRange.location == NSNotFound || lastAssistantRange.location > lastUserRange.location {
+                storage.deleteCharacters(in: NSRange(location: lastAssistantRange.location, length: fullString.length - lastAssistantRange.location))
+            }
         }
     }
 }
