@@ -72,23 +72,37 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
         chatHistory.font = NSFont.systemFont(ofSize: 13)
         chatHistory.backgroundColor = .white
         chatHistory.isVerticallyResizable = true
-        chatHistory.isHorizontallyResizable = true
+        chatHistory.isHorizontallyResizable = false // Disable horizontal resizing for word wrap
         chatHistory.textContainerInset = NSSize(width: 5, height: 5)
         chatHistory.textContainer?.widthTracksTextView = true
-        chatHistory.textContainer?.containerSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        chatHistory.autoresizingMask = [.width, .height]
+        // Set initial container width to match window size minus padding
+        let initialWidth = windowSize.width - 20
+        chatHistory.textContainer?.containerSize = NSSize(width: initialWidth, height: .greatestFiniteMagnitude)
+        chatHistory.textContainer?.lineBreakMode = .byWordWrapping
+        chatHistory.autoresizingMask = [.width]
         chatHistory.translatesAutoresizingMaskIntoConstraints = true
-        chatHistory.frame = NSRect(x: 0, y: 0, width: windowSize.width - 20, height: 1000)
+        chatHistory.frame = NSRect(x: 0, y: 0, width: initialWidth, height: 1000)
 
         chatScrollView = NSScrollView()
         chatScrollView.documentView = chatHistory
         chatScrollView.hasVerticalScroller = true
-        chatScrollView.hasHorizontalScroller = false
+        chatScrollView.hasHorizontalScroller = false // Disable horizontal scroll
         chatScrollView.autohidesScrollers = true
         chatScrollView.borderType = .noBorder
         chatScrollView.backgroundColor = .white
         chatScrollView.translatesAutoresizingMaskIntoConstraints = false
         window.contentView?.addSubview(chatScrollView)
+
+        // Ensure text wraps to the scroll view width on resize
+        NotificationCenter.default.addObserver(forName: NSView.frameDidChangeNotification, object: chatScrollView.contentView, queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            // Match chatHistory container width to chatScrollView width (window minus padding)
+            let width = self.chatScrollView.contentSize.width
+            self.chatHistory.textContainer?.containerSize = NSSize(width: width, height: .greatestFiniteMagnitude)
+            self.chatHistory.textContainer?.widthTracksTextView = true
+            self.chatHistory.frame.size.width = width
+        }
+        chatScrollView.contentView.postsFrameChangedNotifications = true
 
         // User input
         userInput.isEditable = true
