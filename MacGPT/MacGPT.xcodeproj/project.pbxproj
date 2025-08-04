@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FF17FB52E40ECD10007E5BD /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 9FF17FB42E40ECD10007E5BD /* Down */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FF17F972E40EC820007E5BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FF17F7D2E40EC810007E5BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FF17F842E40EC810007E5BD;
+			remoteInfo = MacGPT;
+		};
+		9FF17FA12E40EC820007E5BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FF17F7D2E40EC810007E5BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FF17F842E40EC810007E5BD;
+			remoteInfo = MacGPT;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9FF17F852E40EC810007E5BD /* MacGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF17F962E40EC820007E5BD /* MacGPTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacGPTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF17FA02E40EC820007E5BD /* MacGPTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacGPTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9FF17F872E40EC810007E5BD /* MacGPT */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacGPT;
+			sourceTree = "<group>";
+		};
+		9FF17F992E40EC820007E5BD /* MacGPTTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacGPTTests;
+			sourceTree = "<group>";
+		};
+		9FF17FA32E40EC820007E5BD /* MacGPTUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MacGPTUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FF17F822E40EC810007E5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FF17FB52E40ECD10007E5BD /* Down in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F932E40EC820007E5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F9D2E40EC820007E5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FF17F7C2E40EC810007E5BD = {
+			isa = PBXGroup;
+			children = (
+				9FF17F872E40EC810007E5BD /* MacGPT */,
+				9FF17F992E40EC820007E5BD /* MacGPTTests */,
+				9FF17FA32E40EC820007E5BD /* MacGPTUITests */,
+				9FF17F862E40EC810007E5BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FF17F862E40EC810007E5BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FF17F852E40EC810007E5BD /* MacGPT.app */,
+				9FF17F962E40EC820007E5BD /* MacGPTTests.xctest */,
+				9FF17FA02E40EC820007E5BD /* MacGPTUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FF17F842E40EC810007E5BD /* MacGPT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FF17FAA2E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPT" */;
+			buildPhases = (
+				9FF17F812E40EC810007E5BD /* Sources */,
+				9FF17F822E40EC810007E5BD /* Frameworks */,
+				9FF17F832E40EC810007E5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9FF17F872E40EC810007E5BD /* MacGPT */,
+			);
+			name = MacGPT;
+			packageProductDependencies = (
+				9FF17FB42E40ECD10007E5BD /* Down */,
+			);
+			productName = MacGPT;
+			productReference = 9FF17F852E40EC810007E5BD /* MacGPT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FF17F952E40EC820007E5BD /* MacGPTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FF17FAD2E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPTTests" */;
+			buildPhases = (
+				9FF17F922E40EC820007E5BD /* Sources */,
+				9FF17F932E40EC820007E5BD /* Frameworks */,
+				9FF17F942E40EC820007E5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FF17F982E40EC820007E5BD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9FF17F992E40EC820007E5BD /* MacGPTTests */,
+			);
+			name = MacGPTTests;
+			packageProductDependencies = (
+			);
+			productName = MacGPTTests;
+			productReference = 9FF17F962E40EC820007E5BD /* MacGPTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9FF17F9F2E40EC820007E5BD /* MacGPTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FF17FB02E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPTUITests" */;
+			buildPhases = (
+				9FF17F9C2E40EC820007E5BD /* Sources */,
+				9FF17F9D2E40EC820007E5BD /* Frameworks */,
+				9FF17F9E2E40EC820007E5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FF17FA22E40EC820007E5BD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9FF17FA32E40EC820007E5BD /* MacGPTUITests */,
+			);
+			name = MacGPTUITests;
+			packageProductDependencies = (
+			);
+			productName = MacGPTUITests;
+			productReference = 9FF17FA02E40EC820007E5BD /* MacGPTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FF17F7D2E40EC810007E5BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					9FF17F842E40EC810007E5BD = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					9FF17F952E40EC820007E5BD = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 9FF17F842E40EC810007E5BD;
+					};
+					9FF17F9F2E40EC820007E5BD = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 9FF17F842E40EC810007E5BD;
+					};
+				};
+			};
+			buildConfigurationList = 9FF17F802E40EC810007E5BD /* Build configuration list for PBXProject "MacGPT" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FF17F7C2E40EC810007E5BD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9FF17FB32E40ECD10007E5BD /* XCRemoteSwiftPackageReference "Down" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9FF17F862E40EC810007E5BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FF17F842E40EC810007E5BD /* MacGPT */,
+				9FF17F952E40EC820007E5BD /* MacGPTTests */,
+				9FF17F9F2E40EC820007E5BD /* MacGPTUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FF17F832E40EC810007E5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F942E40EC820007E5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F9E2E40EC820007E5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FF17F812E40EC810007E5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F922E40EC820007E5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FF17F9C2E40EC820007E5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FF17F982E40EC820007E5BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FF17F842E40EC810007E5BD /* MacGPT */;
+			targetProxy = 9FF17F972E40EC820007E5BD /* PBXContainerItemProxy */;
+		};
+		9FF17FA22E40EC820007E5BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FF17F842E40EC810007E5BD /* MacGPT */;
+			targetProxy = 9FF17FA12E40EC820007E5BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9FF17FA82E40EC820007E5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9FF17FA92E40EC820007E5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9FF17FAB2E40EC820007E5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacGPT/MacGPT.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9FF17FAC2E40EC820007E5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacGPT/MacGPT.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9FF17FAE2E40EC820007E5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacGPT";
+			};
+			name = Debug;
+		};
+		9FF17FAF2E40EC820007E5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacGPT";
+			};
+			name = Release;
+		};
+		9FF17FB12E40EC820007E5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MacGPT;
+			};
+			name = Debug;
+		};
+		9FF17FB22E40EC820007E5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Basics.MacGPTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MacGPT;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FF17F802E40EC810007E5BD /* Build configuration list for PBXProject "MacGPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FF17FA82E40EC820007E5BD /* Debug */,
+				9FF17FA92E40EC820007E5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FF17FAA2E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FF17FAB2E40EC820007E5BD /* Debug */,
+				9FF17FAC2E40EC820007E5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FF17FAD2E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FF17FAE2E40EC820007E5BD /* Debug */,
+				9FF17FAF2E40EC820007E5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FF17FB02E40EC820007E5BD /* Build configuration list for PBXNativeTarget "MacGPTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FF17FB12E40EC820007E5BD /* Debug */,
+				9FF17FB22E40EC820007E5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9FF17FB32E40ECD10007E5BD /* XCRemoteSwiftPackageReference "Down" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iwasrobbed/Down";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9FF17FB42E40ECD10007E5BD /* Down */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FF17FB32E40ECD10007E5BD /* XCRemoteSwiftPackageReference "Down" */;
+			productName = Down;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9FF17F7D2E40EC810007E5BD /* Project object */;
+}

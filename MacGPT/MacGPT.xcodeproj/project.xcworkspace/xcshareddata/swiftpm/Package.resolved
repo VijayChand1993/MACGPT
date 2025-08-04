@@ -1,0 +1,15 @@
+{
+  "originHash" : "a56e9083ba6d36cd2f205d83c6687de5b83b7795cb95162a5f4565c4b195fe31",
+  "pins" : [
+    {
+      "identity" : "down",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iwasrobbed/Down",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e754ab1c80920dd51a8e08290c912ac1c2ac8b58"
+      }
+    }
+  ],
+  "version" : 3
+}
