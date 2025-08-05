@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
     var urlSession: URLSession?
     var dataTask: URLSessionDataTask?
     var streamingResponse = ""
-    let chatHistoryKey = "chat_history"
+    let chatHistoryFileName = "chat_history.rtf"
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let windowSize = NSRect(x: 300, y: 300, width: 400, height: 600)
@@ -167,9 +167,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
         inputScrollViewHeightConstraint.isActive = true
 
         loadChatHistory()
-        if let saved = UserDefaults.standard.attributedString(forKey: chatHistoryKey) {
-            chatHistory.textStorage?.setAttributedString(saved)
-        }
         // Always scroll to bottom after loading
         chatHistory.scrollToEndOfDocument(nil)
         window.makeKeyAndOrderFront(nil)
@@ -249,17 +246,49 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
         bubble.append(NSAttributedString(string: "\n\n"))
 
         chatHistory.textStorage?.append(bubble)
-        chatHistory.scrollToEndOfDocument(nil)
+        // Only auto-scroll if user is already at the bottom
+        if let scrollView = chatHistory.enclosingScrollView {
+            let visibleRect = scrollView.contentView.bounds
+            let documentRect = chatHistory.bounds
+            let isAtBottom = abs(visibleRect.maxY - documentRect.maxY) < 2.0
+            if isAtBottom {
+                chatHistory.scrollToEndOfDocument(nil)
+            }
+        }
         saveChatHistory()
     }
 
+
+    func chatHistoryFileURL() -> URL? {
+        let fileManager = FileManager.default
+        if let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+            let dir = appSupport.appendingPathComponent("MacGPT", isDirectory: true)
+            if !fileManager.fileExists(atPath: dir.path) {
+                try? fileManager.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
+            }
+            return dir.appendingPathComponent(chatHistoryFileName)
+        }
+        return nil
+    }
+
     func saveChatHistory() {
-        UserDefaults.standard.set(chatHistory.attributedString().string, forKey: chatHistoryKey)
+        guard let url = chatHistoryFileURL() else { return }
+        do {
+            let data = try chatHistory.attributedString().data(from: NSRange(location: 0, length: chatHistory.attributedString().length), documentAttributes: [.documentType: NSAttributedString.DocumentType.rtf])
+            try data.write(to: url)
+        } catch {
+            print("Failed to save chat history to file: \(error)")
+        }
     }
 
     func loadChatHistory() {
-        if let saved = UserDefaults.standard.string(forKey: chatHistoryKey) {
-            chatHistory.string = saved
+        guard let url = chatHistoryFileURL(), FileManager.default.fileExists(atPath: url.path) else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let attributed = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
+            chatHistory.textStorage?.setAttributedString(attributed)
+        } catch {
+            print("Failed to load chat history from file: \(error)")
         }
     }
 
@@ -333,25 +362,4 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextViewDelegate, URLSessi
     }
 }
 
-// MARK: - UserDefaults extension to store/load NSAttributedString
-extension UserDefaults {
-    func setAttributedString(_ value: NSAttributedString, forKey defaultName: String) {
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false)
-            self.set(data, forKey: defaultName)
-        } catch {
-            print("Failed to archive attributed string: \(error)")
-        }
-    }
-
-    func attributedString(forKey defaultName: String) -> NSAttributedString? {
-        if let data = self.data(forKey: defaultName) {
-            do {
-                return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? NSAttributedString
-            } catch {
-                print("Failed to unarchive attributed string: \(error)")
-            }
-        }
-        return nil
-    }
-}
+// UserDefaults extension removed; chat history is now stored in a file.
